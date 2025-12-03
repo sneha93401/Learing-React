@@ -1,19 +1,7 @@
 import { Store, Truck } from 'lucide-react';
 
-export default function ItemComp({prodImg, prodTitle, prodDes, prodPrice}) {
+export default function ItemComp({prodImg, prodTitle, prodDes, prodPrice , handleCart , filteredProducts}) {
  
-
-  // const [cart, setCart] = useState([]);
-
-  // const handleAddToCart = () => {
-  //   setCart([...cart, ]);
-  //   alert(`${"kuch bhi"} added to cart!`);
-  // };
-
-  // const handleBuyNow = () => {
-  //   alert(`Proceeding to checkout with ${"kuch bhi"}`);
-  // };
-
   return (
     <div
       className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20"
@@ -37,15 +25,15 @@ export default function ItemComp({prodImg, prodTitle, prodDes, prodPrice}) {
         <div className="flex gap-3">
           <button
             onClick={() => handleBuyNow()}
-            className="flex-1 bg-orange-500 hover:bg-orange-600 font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-orange-500/50"
+            className="flex-1 bg-orange-500 hover:bg-orange-600 font-semibold py-3 px-4 rounded-lg transition-all cursor-pointer duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-orange-500/50"
           >
             <Truck size={18} />
             Buy Now
           </button>
 
           <button
-            onClick={() => handleAddToCart()}
-            className="flex-1 bg-gray-800 hover:bg-gray-700 text-orange-500 font-semibold py-3 px-4 rounded-lg border border-orange-500 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-orange-500/30"
+            onClick={() => handleCart()}
+            className="flex-1 bg-gray-800 hover:bg-gray-700 text-orange-500 font-semibold py-3 cursor-pointer px-4 rounded-lg border border-orange-500 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-orange-500/30"
           >
             <Store size={18} />
             Add to Cart
